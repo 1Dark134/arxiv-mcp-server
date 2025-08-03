@@ -1,4 +1,4 @@
-# arXiv MCP Service Client
+# arXiv MCP Server Client
 
 A comprehensive Model Context Protocol (MCP) implementation for interacting with arXiv.org, enabling AI assistants to search, retrieve, analyze, and export academic papers seamlessly.
 
