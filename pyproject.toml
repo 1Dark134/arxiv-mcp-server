@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "arxiv-mcp-server"
+version = "0.1.0"
+description = "A comprehensive Model Context Protocol (MCP) implementation for interacting with arXiv.org"
+authors = ["anuj0456 <anuj0456@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/anuj0456/arxiv-mcp-client"
+repository = "https://github.com/anuj0456/arxiv-mcp-client"
+keywords = ["arxiv", "mcp", "model-context-protocol", "academic", "papers", "research", "ai"]
+
+[tool.poetry.dependencies]
+python = ">=3.13"
+mcp = "^1.12.3"
+httpx = "^0.28.1"
+
+
+[tool.poetry.scripts]
+arxiv-mcp = "arxiv_mcp_client:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
