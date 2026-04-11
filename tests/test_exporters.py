@@ -6,6 +6,7 @@ from io import StringIO
 
 import pytest
 
+from arxiv_mcp.exceptions import ArxivExportError
 from arxiv_mcp.exporters import PaperExporter
 from arxiv_mcp.models import ExportConfig, Paper
 
@@ -73,12 +74,12 @@ def config_all_off():
 class TestUnsupportedFormat:
     def test_raises_on_unknown_format(self, sample_paper):
         config = ExportConfig(format="xml")
-        with pytest.raises(ValueError, match="Unsupported format"):
+        with pytest.raises(ArxivExportError, match="Unsupported export format"):
             PaperExporter.export_papers([sample_paper], config)
 
     def test_raises_on_empty_format(self, sample_paper):
         config = ExportConfig(format="")
-        with pytest.raises(ValueError):
+        with pytest.raises(ArxivExportError):
             PaperExporter.export_papers([sample_paper], config)
 
 

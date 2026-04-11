@@ -7,6 +7,8 @@ import xml.etree.ElementTree as ET
 
 import httpx
 from mcp import ClientSession, StdioServerParameters
+
+from .exceptions import ArxivConnectionError
 from mcp.client.stdio import stdio_client
 from mcp.types import (
     CallToolRequest,
@@ -50,7 +52,7 @@ class ArxivMCPClient:
     async def list_tools(self) -> List[Tool]:
         """List available tools from the MCP server"""
         if not self.session:
-            raise RuntimeError("Not connected to server")
+            raise ArxivConnectionError("Not connected to server")
 
         response = await self.session.list_tools(ListToolsRequest())
         return response.tools
@@ -58,7 +60,7 @@ class ArxivMCPClient:
     async def search_papers(self, query: str, max_results: int = 10) -> Dict[str, Any]:
         """Search for papers on arXiv"""
         if not self.session:
-            raise RuntimeError("Not connected to server")
+            raise ArxivConnectionError("Not connected to server")
 
         request = CallToolRequest(
             name="search_arxiv",
@@ -74,7 +76,7 @@ class ArxivMCPClient:
     async def get_paper_details(self, arxiv_id: str) -> Dict[str, Any]:
         """Get detailed information about a specific paper"""
         if not self.session:
-            raise RuntimeError("Not connected to server")
+            raise ArxivConnectionError("Not connected to server")
 
         request = CallToolRequest(
             name="get_paper",
@@ -87,7 +89,7 @@ class ArxivMCPClient:
     async def get_paper_summary(self, arxiv_id: str) -> str:
         """Get a formatted summary of a paper"""
         if not self.session:
-            raise RuntimeError("Not connected to server")
+            raise ArxivConnectionError("Not connected to server")
 
         request = CallToolRequest(
             name="summarize_paper",
@@ -100,7 +102,7 @@ class ArxivMCPClient:
     async def search_by_author(self, author_name: str, max_results: int = 20) -> Dict[str, Any]:
         """Search for papers by a specific author"""
         if not self.session:
-            raise RuntimeError("Not connected to server")
+            raise ArxivConnectionError("Not connected to server")
 
         request = CallToolRequest(
             name="search_by_author",
@@ -113,7 +115,7 @@ class ArxivMCPClient:
     async def search_by_category(self, category: str, max_results: int = 20, sort_by: str = "submittedDate") -> Dict[str, Any]:
         """Search for papers in a specific category"""
         if not self.session:
-            raise RuntimeError("Not connected to server")
+            raise ArxivConnectionError("Not connected to server")
 
         request = CallToolRequest(
             name="search_by_category",
@@ -126,7 +128,7 @@ class ArxivMCPClient:
     async def get_recent_papers(self, category: str = "", days_back: int = 7, max_results: int = 15) -> Dict[str, Any]:
         """Get recent papers"""
         if not self.session:
-            raise RuntimeError("Not connected to server")
+            raise ArxivConnectionError("Not connected to server")
 
         request = CallToolRequest(
             name="get_recent_papers",
@@ -139,7 +141,7 @@ class ArxivMCPClient:
     async def compare_papers(self, arxiv_ids: List[str], comparison_fields: List[str] = None) -> str:
         """Compare multiple papers"""
         if not self.session:
-            raise RuntimeError("Not connected to server")
+            raise ArxivConnectionError("Not connected to server")
 
         if comparison_fields is None:
             comparison_fields = ["authors", "categories", "abstract", "published"]
@@ -155,7 +157,7 @@ class ArxivMCPClient:
     async def find_related_papers(self, arxiv_id: str, max_results: int = 10) -> Dict[str, Any]:
         """Find papers related to a given paper"""
         if not self.session:
-            raise RuntimeError("Not connected to server")
+            raise ArxivConnectionError("Not connected to server")
 
         request = CallToolRequest(
             name="find_related_papers",
@@ -168,7 +170,7 @@ class ArxivMCPClient:
     async def export_papers(self, arxiv_ids: List[str], format: str = "bibtex", include_abstract: bool = True) -> str:
         """Export papers in various formats"""
         if not self.session:
-            raise RuntimeError("Not connected to server")
+            raise ArxivConnectionError("Not connected to server")
 
         request = CallToolRequest(
             name="export_papers",
@@ -181,7 +183,7 @@ class ArxivMCPClient:
     async def list_resources(self) -> List[Resource]:
         """List available resources"""
         if not self.session:
-            raise RuntimeError("Not connected to server")
+            raise ArxivConnectionError("Not connected to server")
 
         response = await self.session.list_resources(ListResourcesRequest())
         return response.resources

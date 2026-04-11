@@ -5,6 +5,7 @@ from urllib.parse import quote_plus
 
 import httpx
 
+from .exceptions import ArxivAPIError, ArxivNotFoundError, ArxivParseError
 from .models import Paper, SearchResult
 
 logger = logging.getLogger(__name__)
@@ -41,8 +42,32 @@ class ArxivAPI:
                 papers=papers
             )
 
+        except httpx.HTTPStatusError as e:
+            logger.error(f"HTTP error searching arXiv: {e}")
+            return SearchResult(
+                query=query,
+                total_results=0,
+                papers=[],
+                error=str(e)
+            )
+        except (httpx.ConnectError, httpx.ReadTimeout, httpx.TimeoutException) as e:
+            logger.error(f"Connection error searching arXiv: {e}")
+            return SearchResult(
+                query=query,
+                total_results=0,
+                papers=[],
+                error=str(e)
+            )
+        except ArxivParseError as e:
+            logger.error(f"Parse error searching arXiv: {e}")
+            return SearchResult(
+                query=query,
+                total_results=0,
+                papers=[],
+                error=str(e)
+            )
         except Exception as e:
-            logger.error(f"Error searching arXiv: {e}")
+            logger.error(f"Unexpected error searching arXiv: {e}")
             return SearchResult(
                 query=query,
                 total_results=0,
@@ -62,8 +87,14 @@ class ArxivAPI:
             papers = self._parse_response(response.content)
             return papers[0] if papers else None
 
+        except httpx.HTTPStatusError as e:
+            logger.error(f"HTTP error getting paper {arxiv_id}: {e}")
+            return None
+        except (httpx.ConnectError, httpx.ReadTimeout, httpx.TimeoutException) as e:
+            logger.error(f"Connection error getting paper {arxiv_id}: {e}")
+            return None
         except Exception as e:
-            logger.error(f"Error getting paper {arxiv_id}: {e}")
+            logger.error(f"Unexpected error getting paper {arxiv_id}: {e}")
             return None
 
     def _parse_response(self, content: bytes) -> List[Paper]:
@@ -79,8 +110,11 @@ class ArxivAPI:
 
             return papers
 
+        except ET.ParseError as e:
+            logger.error(f"XML parse error: {e}")
+            return []
         except Exception as e:
-            logger.error(f"Error parsing response: {e}")
+            logger.error(f"Unexpected error parsing response: {e}")
             return []
 
     def _parse_paper_entry(self, entry) -> Optional[Dict[str, Any]]:
@@ -137,8 +171,11 @@ class ArxivAPI:
                 "pdf_url": pdf_url
             }
 
+        except (AttributeError, KeyError, IndexError) as e:
+            logger.error(f"Error parsing paper entry fields: {e}")
+            return None
         except Exception as e:
-            logger.error(f"Error parsing paper entry: {e}")
+            logger.error(f"Unexpected error parsing paper entry: {e}")
             return None
 
     async def close(self):

@@ -5,6 +5,7 @@ from datetime import datetime, timedelta
 from typing import Dict, List, Any
 import random
 
+from .exceptions import ArxivAPIError
 from .models import Paper, CitationInfo, TrendAnalysis
 from .api import ArxivAPI
 
@@ -73,8 +74,18 @@ class TrendAnalyzer:
                 data=data
             )
 
+        except ArxivAPIError as e:
+            logger.error(f"API error analyzing trends: {e}")
+            return TrendAnalysis(
+                category=category,
+                time_period=time_period,
+                analysis_type=analysis_type,
+                total_papers=0,
+                data={},
+                error=str(e)
+            )
         except Exception as e:
-            logger.error(f"Error analyzing trends: {e}")
+            logger.error(f"Unexpected error analyzing trends: {e}")
             return TrendAnalysis(
                 category=category,
                 time_period=time_period,
@@ -239,6 +250,9 @@ class RelatedPaperFinder:
 
             return related_papers
 
+        except ArxivAPIError as e:
+            logger.error(f"API error finding related papers: {e}")
+            return []
         except Exception as e:
-            logger.error(f"Error finding related papers: {e}")
+            logger.error(f"Unexpected error finding related papers: {e}")
             return []

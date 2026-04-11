@@ -6,6 +6,7 @@ from unittest.mock import AsyncMock, MagicMock, patch, PropertyMock
 import pytest
 
 from arxiv_mcp.client import ArxivMCPClient
+from arxiv_mcp.exceptions import ArxivConnectionError
 
 
 # ---------------------------------------------------------------------------
@@ -114,47 +115,47 @@ class TestClientConnection:
 class TestDisconnectedErrors:
 
     async def test_list_tools_disconnected(self, client):
-        with pytest.raises(RuntimeError, match="Not connected"):
+        with pytest.raises(ArxivConnectionError, match="Not connected"):
             await client.list_tools()
 
     async def test_search_papers_disconnected(self, client):
-        with pytest.raises(RuntimeError, match="Not connected"):
+        with pytest.raises(ArxivConnectionError, match="Not connected"):
             await client.search_papers("query")
 
     async def test_get_paper_details_disconnected(self, client):
-        with pytest.raises(RuntimeError, match="Not connected"):
+        with pytest.raises(ArxivConnectionError, match="Not connected"):
             await client.get_paper_details("2401.00001")
 
     async def test_get_paper_summary_disconnected(self, client):
-        with pytest.raises(RuntimeError, match="Not connected"):
+        with pytest.raises(ArxivConnectionError, match="Not connected"):
             await client.get_paper_summary("2401.00001")
 
     async def test_search_by_author_disconnected(self, client):
-        with pytest.raises(RuntimeError, match="Not connected"):
+        with pytest.raises(ArxivConnectionError, match="Not connected"):
             await client.search_by_author("Smith")
 
     async def test_search_by_category_disconnected(self, client):
-        with pytest.raises(RuntimeError, match="Not connected"):
+        with pytest.raises(ArxivConnectionError, match="Not connected"):
             await client.search_by_category("cs.AI")
 
     async def test_get_recent_papers_disconnected(self, client):
-        with pytest.raises(RuntimeError, match="Not connected"):
+        with pytest.raises(ArxivConnectionError, match="Not connected"):
             await client.get_recent_papers()
 
     async def test_compare_papers_disconnected(self, client):
-        with pytest.raises(RuntimeError, match="Not connected"):
+        with pytest.raises(ArxivConnectionError, match="Not connected"):
             await client.compare_papers(["id1", "id2"])
 
     async def test_find_related_papers_disconnected(self, client):
-        with pytest.raises(RuntimeError, match="Not connected"):
+        with pytest.raises(ArxivConnectionError, match="Not connected"):
             await client.find_related_papers("2401.00001")
 
     async def test_export_papers_disconnected(self, client):
-        with pytest.raises(RuntimeError, match="Not connected"):
+        with pytest.raises(ArxivConnectionError, match="Not connected"):
             await client.export_papers(["2401.00001"])
 
     async def test_list_resources_disconnected(self, client):
-        with pytest.raises(RuntimeError, match="Not connected"):
+        with pytest.raises(ArxivConnectionError, match="Not connected"):
             await client.list_resources()
 
 
