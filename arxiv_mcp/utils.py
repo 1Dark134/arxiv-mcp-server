@@ -1,6 +1,6 @@
 import logging
-from typing import List, Dict, Any
 from datetime import datetime
+from typing import List
 
 from .models import Paper
 

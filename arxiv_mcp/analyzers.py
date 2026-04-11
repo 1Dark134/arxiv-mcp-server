@@ -1,13 +1,13 @@
 import logging
+import random
 import re
 from collections import Counter
 from datetime import datetime, timedelta
-from typing import Dict, List, Any
-import random
+from typing import Any, Dict, List
 
-from .exceptions import ArxivAPIError
-from .models import Paper, CitationInfo, TrendAnalysis
 from .api import ArxivAPI
+from .exceptions import ArxivAPIError
+from .models import CitationInfo, Paper, TrendAnalysis
 
 logger = logging.getLogger(__name__)
 

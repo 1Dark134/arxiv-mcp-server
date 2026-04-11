@@ -1,10 +1,10 @@
 import asyncio
 import logging
 import sys
-from typing import Optional
 
-from arxiv_mcp import ArxivMCPClient, ArxivMCPServer
+from arxiv_mcp import ArxivMCPServer
 from arxiv_mcp.utils import setup_logging
+
 
 async def run_server():
     """Run the MCP server."""
@@ -145,7 +145,7 @@ async def demo_usage():
 
     author_results = await server.search_by_author("Yann LeCun", max_results=3)
     if author_results.get("papers"):
-        print(f"Recent papers by Yann LeCun:")
+        print("Recent papers by Yann LeCun:")
         for paper in author_results["papers"][:3]:
             print(f"• {paper['title']} ({paper['published'][:4]})")
 

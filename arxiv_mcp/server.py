@@ -1,17 +1,16 @@
 """MCP Server implementation for arXiv integration."""
 
 import logging
-from typing import List, Dict, Any, Optional
 from datetime import datetime, timedelta
+from typing import Any, Dict, List
 
 from mcp.types import Tool
 
+from .analyzers import CitationAnalyzer, RelatedPaperFinder, TrendAnalyzer
 from .api import ArxivAPI
-from .exceptions import ArxivAPIError, ArxivExportError, ArxivMCPError, ArxivNotFoundError
-from .models import Paper, ExportConfig
 from .exporters import PaperExporter
-from .analyzers import TrendAnalyzer, CitationAnalyzer, RelatedPaperFinder
-from .utils import SearchQueryBuilder, PaperComparator, PaperFormatter
+from .models import ExportConfig
+from .utils import PaperComparator, PaperFormatter, SearchQueryBuilder
 
 logger = logging.getLogger(__name__)
 

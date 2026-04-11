@@ -1,26 +1,19 @@
-import asyncio
 import json
 import logging
-from typing import Any, Dict, List, Optional, Sequence
-from urllib.parse import quote_plus
-import xml.etree.ElementTree as ET
+from typing import Any, Dict, List, Optional
 
 import httpx
 from mcp import ClientSession, StdioServerParameters
-
-from .exceptions import ArxivConnectionError
 from mcp.client.stdio import stdio_client
 from mcp.types import (
     CallToolRequest,
-    GetPromptRequest,
-    ListPromptsRequest,
     ListResourcesRequest,
     ListToolsRequest,
-    ReadResourceRequest,
     Resource,
-    TextContent,
     Tool,
 )
+
+from .exceptions import ArxivConnectionError
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)

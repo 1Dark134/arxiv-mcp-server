@@ -1,11 +1,11 @@
 import logging
 import xml.etree.ElementTree as ET
-from typing import Dict, List, Optional, Any
+from typing import Any, Dict, List, Optional
 from urllib.parse import quote_plus
 
 import httpx
 
-from .exceptions import ArxivAPIError, ArxivNotFoundError, ArxivParseError
+from .exceptions import ArxivParseError
 from .models import Paper, SearchResult
 
 logger = logging.getLogger(__name__)
