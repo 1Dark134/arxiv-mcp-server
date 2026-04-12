@@ -1,6 +1,15 @@
 from .client import ArxivMCPClient
+from .exceptions import (
+    ArxivAPIError,
+    ArxivConnectionError,
+    ArxivExportError,
+    ArxivMCPError,
+    ArxivNotFoundError,
+    ArxivParseError,
+    ArxivValidationError,
+)
+from .models import CitationInfo, Paper, SearchResult, TrendAnalysis
 from .server import ArxivMCPServer
-from .models import Paper, SearchResult, CitationInfo, TrendAnalysis
 
 __all__ = [
     "ArxivMCPClient",
@@ -9,4 +18,11 @@ __all__ = [
     "SearchResult",
     "CitationInfo",
     "TrendAnalysis",
+    "ArxivMCPError",
+    "ArxivAPIError",
+    "ArxivNotFoundError",
+    "ArxivParseError",
+    "ArxivExportError",
+    "ArxivConnectionError",
+    "ArxivValidationError",
 ]

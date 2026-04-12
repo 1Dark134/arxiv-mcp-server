@@ -1,9 +1,13 @@
-import json
 import csv
+import json
+import logging
 from io import StringIO
-from typing import List, Dict, Any
+from typing import List
 
-from .models import Paper, ExportConfig
+from .exceptions import ArxivExportError
+from .models import ExportConfig, Paper
+
+logger = logging.getLogger(__name__)
 
 
 class PaperExporter:
@@ -24,7 +28,10 @@ class PaperExporter:
         elif config.format == "markdown":
             return PaperExporter._export_markdown(papers, config)
         else:
-            raise ValueError(f"Unsupported format: {config.format}")
+            raise ArxivExportError(
+                f"Unsupported export format: {config.format}",
+                context={"format": config.format}
+            )
 
     @staticmethod
     def _export_bibtex(papers: List[Paper], config: ExportConfig) -> str:
